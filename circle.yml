@@ -12,7 +12,11 @@ dependencies:
   pre:
     - npm install -g yarn
   override:
-    - yarn
+    - yarn install
+
+test:
+    override:
+      - true
 
 deployment:
   deploy:
@@ -20,9 +24,9 @@ deployment:
     commands:
       - git config --global user.name  "CircleCI"
       - git config --global user.email "circleci@gh-pages.com"
-      - git checkout -B gh-pages
       - yarn build
       - rm -rf src
       - cp build/* ./
       - git commit -am "Publish [ci skip]"
+      - git checkout -B gh-pages
       - git push -u origin gh-pages
