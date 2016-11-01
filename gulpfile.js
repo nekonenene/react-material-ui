@@ -77,7 +77,7 @@ gulp.task('copy', function() {
  **********   */
 gulp.task('compile', ['webpack', 'sass', 'pug']);
 
-/* Pug : Jade の新しい名前。HTML へコンパイル */
+/* webpack : React 関連の JS ファイルをまとめて１つにコンパイル、minify もかます */
 gulp.task('webpack', function() {
   pump([
     gulp.src('./src/react/**/*.{js,jsx}'),
