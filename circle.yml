@@ -17,8 +17,7 @@ dependencies:
 
 test:
   override:
-    - git config --global user.name  "CircleCI"
-    - git config --global user.email "circleci@gh-pages.com"
+    - yarn test
 
 deployment:
   deploy:
@@ -27,6 +26,8 @@ deployment:
       - yarn build
       - rm -rf src
       - cp -Rf build/. ./
+      - git config --global user.name  "CircleCI"
+      - git config --global user.email "circleci@gh-pages.com"
       - git add .
       - git commit -m "Publish [ci skip]"
       - git checkout -B gh-pages

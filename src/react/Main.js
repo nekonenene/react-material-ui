@@ -2,7 +2,7 @@
  * In this file, we create a React component
  * which incorporates components provided by Material-UI.
  */
-import React, {Component} from 'react';
+import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 import {deepOrange500} from 'material-ui/styles/colors';
@@ -24,7 +24,7 @@ const muiTheme = getMuiTheme({
   },
 });
 
-class Main extends Component {
+class Main extends React.Component {
   constructor(props, context) {
     super(props, context);
 

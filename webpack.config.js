@@ -35,9 +35,6 @@ const config = {
         test: /\.js$/, // All .js files
         loader: 'babel-loader',
         exclude: [nodeModulesPath],
-        query: {
-          presets: ['es2015', 'react'],
-        },
       },
     ],
   },
