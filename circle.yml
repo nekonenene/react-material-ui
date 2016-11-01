@@ -10,9 +10,9 @@ machine:
 
 dependencies:
   pre:
-    - npm install -g yarn
+    - npm cache clean
   override:
-    - yarn install
+    - npm install
 
 test:
   override:
@@ -23,7 +23,7 @@ deployment:
   deploy:
     branch: master
     commands:
-      - yarn build
+      - npm build
       - rm -rf src
       - cp -Rf build/. ./
       - git add .
