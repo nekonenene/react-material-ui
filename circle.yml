@@ -16,14 +16,13 @@ dependencies:
 
 test:
   override:
-    - true
+    - git config --global user.name  "CircleCI"
+    - git config --global user.email "circleci@gh-pages.com"
 
 deployment:
   deploy:
     branch: master
     commands:
-      - git config --global user.name  "CircleCI"
-      - git config --global user.email "circleci@gh-pages.com"
       - yarn build
       - rm -rf src
       - cp build/* ./
