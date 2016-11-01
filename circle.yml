@@ -23,7 +23,7 @@ deployment:
   deploy:
     branch: master
     commands:
-      - npm build
+      - npm run build
       - rm -rf src
       - cp -Rf build/. ./
       - git add .
