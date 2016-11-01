@@ -1,0 +1,26 @@
+general:
+  branches:
+    ignore:
+      - gh-pages
+
+machine:
+  timezone: Asia/Tokyo
+  node:
+    version: v6.1.0
+
+dependencies:
+  pre:
+    - npm install -g yarn
+  override:
+    - yarn
+
+deployment:
+  deploy:
+    branch: master
+    commands:
+      - yarn build
+      - rm -rf src
+      - cp -R build/ ./
+      - git commit -am "Publish [ci skip]"
+      - git checkout -B gh-pages
+      - git push -u origin gh-pages
