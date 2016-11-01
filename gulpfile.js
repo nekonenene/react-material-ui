@@ -81,7 +81,7 @@ gulp.task('compile', ['webpack', 'sass', 'pug']);
 gulp.task('webpack', function() {
   pump([
     gulp.src('./src/react/**/*.{js,jsx}'),
-    gulpWebpack(require('./webpack-production.config.js'), webpack),
+    gulpWebpack(require('./webpack.config.js'), webpack),
     gulp.dest('./build/'),
     connect.reload(),
   ]);
