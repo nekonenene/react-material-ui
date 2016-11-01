@@ -15,8 +15,8 @@ dependencies:
     - yarn install
 
 test:
-    override:
-      - true
+  override:
+    - true
 
 deployment:
   deploy:
