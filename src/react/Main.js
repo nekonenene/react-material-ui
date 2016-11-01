@@ -62,7 +62,7 @@ class Main extends Component {
             actions={standardActions}
             onRequestClose={ev => this.handleRequestClose(ev)}
           >
-            1-2-3-4-5
+            1-2-3-4-5です
           </Dialog>
           <h1>Material-UI</h1>
           <h2>example project</h2>
