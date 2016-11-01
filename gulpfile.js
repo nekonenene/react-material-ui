@@ -22,7 +22,6 @@ var imageMin = require('gulp-imagemin');
 
 // Live Reload
 var connect = require('gulp-connect');
-var webServer = require('gulp-webserver');
 
 var defaultTasks = [
   'copy',
@@ -53,17 +52,6 @@ gulp.task('server', function() {
     port       : 8013,
     livereload : true,
   });
-});
-
-/* Live Reload!! */
-gulp.task('oldServer', function() {
-  gulp.src('./build/')
-    .pipe(webServer({
-      port             : 8013,
-      livereload       : true,
-      directoryListing : false,
-      open             : true,
-    }));
 });
 
 /* COPY : HTML, CSS, JS などでないファイルを build にコピー */
