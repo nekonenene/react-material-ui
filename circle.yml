@@ -28,4 +28,4 @@ deployment:
       - cp build/* ./
       - git commit -am "Publish [ci skip]"
       - git checkout -B gh-pages
-      - git push -u origin gh-pages
+      - git push -u origin gh-pages --force
