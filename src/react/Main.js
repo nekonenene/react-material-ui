@@ -12,7 +12,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const styles = {
   container: {
-    textAlign: "center",
+    textAlign: 'center',
     paddingTop: 200,
   },
 };
@@ -49,7 +49,7 @@ class Main extends Component {
     const standardActions = (
       <FlatButton
         label="Ok"
-        primary={true}
+        primary
         onTouchTap={ev => this.handleRequestClose(ev)}
       />
     );
@@ -63,13 +63,13 @@ class Main extends Component {
             actions={standardActions}
             onRequestClose={ev => this.handleRequestClose(ev)}
           >
-            1-2-3-4-5です<br/>大変だ！ 空から隕石が落ちてきたぞ！
+            1-2-3-4-5です<br />大変だ！ 空から隕石が落ちてきたぞ！
           </Dialog>
           <h1>Material-UIだよ</h1>
           <h2>example project</h2>
           <RaisedButton
             label="Super Secret Password"
-            secondary={true}
+            secondary
             onTouchTap={ev => this.handleTouchTap(ev)}
           />
         </div>
