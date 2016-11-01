@@ -18,9 +18,11 @@ deployment:
   deploy:
     branch: master
     commands:
+      - git config --global user.name  "CircleCI"
+      - git config --global user.email "circleci@gh-pages.com"
+      - git checkout -B gh-pages
       - yarn build
       - rm -rf src
       - cp build/* ./
       - git commit -am "Publish [ci skip]"
-      - git checkout -B gh-pages
       - git push -u origin gh-pages
