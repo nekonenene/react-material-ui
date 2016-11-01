@@ -20,7 +20,7 @@ deployment:
     commands:
       - yarn build
       - rm -rf src
-      - cp -R build/ ./
+      - cp build/* ./
       - git commit -am "Publish [ci skip]"
       - git checkout -B gh-pages
       - git push -u origin gh-pages
