@@ -18,6 +18,7 @@ const styles = {
 };
 
 const muiTheme = getMuiTheme({
+  fontFamily: '"Rounded Mplus 1c", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, "Roboto", "Droid Sans", sans-serif',
   palette: {
     accent1Color: deepOrange500,
   },
