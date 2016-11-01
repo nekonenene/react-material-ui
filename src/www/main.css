@@ -1,12 +1,13 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-
 html {
-  font-family: "Roboto", "Noto Sans JP", sans-serif;
+	font-family: "Roboto", "Noto Sans JP", sans-serif;
 	font-weight: 500;
-  font-size: 16px;
+	font-size: 16px;
 }
 
 body {
-  font-size: 0.8rem;
-  line-height: 1.2rem;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
 }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxvRUFBWTtBQUVaO0NBQ0Msa0RBQWtEO0NBQ2xELGlCQUFpQjtDQUNqQixnQkFBZ0I7Q0FDaEI7O0FBRUQ7Q0FDQyxrQkFBa0I7Q0FDbEIsb0JBQW9CO0NBQ3BCIiwiZmlsZSI6Im1haW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCB1cmwoaHR0cDovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Vhcmx5YWNjZXNzL25vdG9zYW5zanAuY3NzKTtcblxuaHRtbCB7XG5cdGZvbnQtZmFtaWx5OiBcIlJvYm90b1wiLCBcIk5vdG8gU2FucyBKUFwiLCBzYW5zLXNlcmlmO1xuXHRmb250LXdlaWdodDogNTAwO1xuXHRmb250LXNpemU6IDE2cHg7XG59XG5cbmJvZHkge1xuXHRmb250LXNpemU6IDAuOHJlbTtcblx0bGluZS1oZWlnaHQ6IDEuMnJlbTtcbn1cbiJdfQ== */
