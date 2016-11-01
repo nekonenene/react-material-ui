@@ -21,6 +21,7 @@ var htmlMin = require('gulp-htmlmin');
 var imageMin = require('gulp-imagemin');
 
 // Live Reload
+var connect = require('gulp-connect');
 var webServer = require('gulp-webserver');
 
 var defaultTasks = [
@@ -36,16 +37,26 @@ gulp.task('default', defaultTasks);
 
 /* watch 系まとめ : gulp watch */
 gulp.task('watch', function() {
-  gulp.watch(['./src/react/**/*.jsx?'],  ['webpack']);
-  gulp.watch(['./src/pug/**/*.pug'],  ['pug']);
-  gulp.watch(['./src/sass/**/*.scss'], ['sass']);
-  gulp.watch(['./src/www/**/*.css']  , ['cssMinify']);
-  gulp.watch(['./src/www/**/*.html'] , ['htmlMinify']);
+  gulp.watch(['./src/react/**/*.{js,jsx}'], ['webpack']);
+  gulp.watch(['./src/pug/**/*.pug'],    ['pug']);
+  gulp.watch(['./src/sass/**/*.scss'],  ['sass']);
+  gulp.watch(['./src/www/**/*.css']  ,  ['cssMinify']);
+  gulp.watch(['./src/www/**/*.html'] ,  ['htmlMinify']);
 });
 
 
 /* Live Reload!! */
 gulp.task('server', function() {
+  connect.server({
+    root       : './build/',
+    name       : 'Server(Product)',
+    port       : 8013,
+    livereload : true,
+  });
+});
+
+/* Live Reload!! */
+gulp.task('oldServer', function() {
   gulp.src('./build/')
     .pipe(webServer({
       port             : 8013,
@@ -74,9 +85,10 @@ gulp.task('compile', ['webpack', 'sass', 'pug']);
 /* Pug : Jade の新しい名前。HTML へコンパイル */
 gulp.task('webpack', function() {
   pump([
-    gulp.src('./src/react/**/*.jsx?'),
+    gulp.src('./src/react/**/*.{js,jsx}'),
     gulpWebpack(require('./webpack-production.config.js'), webpack),
-    gulp.dest('./build/')
+    gulp.dest('./build/'),
+    connect.reload(),
   ]);
 });
 
@@ -127,7 +139,8 @@ gulp.task('cssMinify', function() {
 
   gulp.src('./src/www/**/*.css')
     .pipe(postCss(postCssTasks))
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('./build/'))
+    .pipe(connect.reload());
 });
 
 /* HTML Min */
@@ -147,7 +160,8 @@ gulp.task('htmlMinify', function() {
       useShortDoctype              : true,
       removeEmptyAttributes        : true,
     }))
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('./build/'))
+    .pipe(connect.reload());
 });
 
 /* ImageMin : 画像圧縮 */
