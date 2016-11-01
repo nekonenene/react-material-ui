@@ -12,7 +12,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const styles = {
   container: {
-    textAlign: 'center',
+    textAlign: "center",
     paddingTop: 200,
   },
 };
@@ -32,13 +32,13 @@ class Main extends Component {
     };
   }
 
-  handleRequestClose = () => {
+  handleRequestClose() {
     this.setState({
       open: false,
     });
   }
 
-  handleTouchTap = () => {
+  handleTouchTap() {
     this.setState({
       open: true,
     });
@@ -49,7 +49,7 @@ class Main extends Component {
       <FlatButton
         label="Ok"
         primary={true}
-        onTouchTap={this.handleRequestClose}
+        onTouchTap={ev => this.handleRequestClose(ev)}
       />
     );
 
@@ -60,7 +60,7 @@ class Main extends Component {
             open={this.state.open}
             title="Super Secret Password"
             actions={standardActions}
-            onRequestClose={this.handleRequestClose}
+            onRequestClose={ev => this.handleRequestClose(ev)}
           >
             1-2-3-4-5
           </Dialog>
@@ -69,7 +69,7 @@ class Main extends Component {
           <RaisedButton
             label="Super Secret Password"
             secondary={true}
-            onTouchTap={this.handleTouchTap}
+            onTouchTap={ev => this.handleTouchTap(ev)}
           />
         </div>
       </MuiThemeProvider>
