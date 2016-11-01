@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "gulp",
-    "build": "webpack --config webpack-production.config.js --progress --colors"
+    "build": "gulp build"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",

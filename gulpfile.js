@@ -23,16 +23,23 @@ var imageMin = require('gulp-imagemin');
 // Live Reload
 var connect = require('gulp-connect');
 
-var defaultTasks = [
+var buildTasks = [
   'copy',
   'compile',
   'minify',
+];
+
+var defaultTasks = [
+  'build',
   'server',
   'watch',
 ];
 
 /* gulp とコマンドを打つと実行される */
 gulp.task('default', defaultTasks);
+
+/* gulp build */
+gulp.task('build', buildTasks);
 
 /* watch 系まとめ : gulp watch */
 gulp.task('watch', function() {
