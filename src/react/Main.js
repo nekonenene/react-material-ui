@@ -62,9 +62,9 @@ class Main extends Component {
             actions={standardActions}
             onRequestClose={ev => this.handleRequestClose(ev)}
           >
-            1-2-3-4-5です
+            1-2-3-4-5です<br/>大変だ！ 空から隕石が落ちてきたぞ！
           </Dialog>
-          <h1>Material-UI</h1>
+          <h1>Material-UIだよ</h1>
           <h2>example project</h2>
           <RaisedButton
             label="Super Secret Password"
