@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+
 const outputPath = path.resolve(__dirname, 'build');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
@@ -14,9 +15,9 @@ const config = {
   plugins: [
     // Define production build to allow React to strip out unnecessary checks
     new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
     }),
     // Minify the bundle
     new webpack.optimize.UglifyJsPlugin({
@@ -35,7 +36,7 @@ const config = {
         loader: 'babel-loader',
         exclude: [nodeModulesPath],
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react'],
         },
       },
     ],
