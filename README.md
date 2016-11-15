@@ -4,7 +4,7 @@
 
 Powered by...
 - [React](https://facebook.github.io/react/)
-- [Material-UI](http://callemall.github.io/material-ui/)
+- [Material-UI](http://callemall.github.io/material-ui/) (and [Material-UI - Example Webpack Project](https://github.com/callemall/material-ui-webpack-example))
 - [Yarn](https://yarnpkg.com/)
 - [gulp](http://gulpjs.com/)
 - [webpack](https://webpack.github.io/)
